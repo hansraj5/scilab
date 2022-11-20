@@ -1,0 +1,47 @@
+                       Program 04
+                         Electromagnetics 
+
+
+
+Aim:-
+To represent Electric field due to two point charges (for same magnitude and for different magnitude). 
+Theory:-
+An electric field is the physical field that surrounds electrically charged particles and exerts force on all other charged particles in the field, either attracting or repelling them. 
+Electric field due to 2 point charges 
+Coulomb’s law states that the magnitude of the electrostatic force of attraction or repulsion between two point charges is directly proportional to the product of the magnitudes of charges and inversely proportional to the square of the distance between them.
+Code
+
+//Electric Feild
+clc;
+clear;
+clf;
+k=9.*10.^9;
+q1=1.6.*10.^(-19) .* input("Enter the value of charge1:- ");
+q2=1.6.*10.^(-19) .* input("Enter the value of charge2:- ");
+x1=input("Enter the x coordinate of 1st charge:- ");
+y1=input("Enter the y coordinate of 1st charge:- ");
+x2=input("Enter the x coordinate of 2nd charge:- ");
+y2=input("Enter the y coordinate of 2nd charge:- ");
+x=linspace(0,10,20);
+y=linspace(0,10,20);
+[X,Y]=meshgrid(x,y);
+fx1=k.*q1.*(X-x1)./((X-x1).^2+(Y-y1).^2).^1.5;
+fy1=k.*q1.*(Y-y1)./((X-x1).^2+(Y-y1).^2).^1.5;
+fx2=k.*q2.*(X-x2)./((X-x2).^2+(Y-y2).^2).^1.5;
+fy2=k.*q2.*(Y-y2)./((X-x2).^2+(Y-y2).^2).^1.5;
+fx=fx1+fx2;
+fy=fy1+fy2;
+champ1(x,y,fx',fy');
+xlabel('X');
+ylabel('Y');
+xtitle('Electric Field due to two point charges');
+
+
+
+
+// a)	When both charges are of same polarity
+ 
+ 
+// b)When charges are of different polarity
+ 
+ 
